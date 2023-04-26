@@ -1,0 +1,48 @@
+--create a store database
+
+/** For Sale Items
+Dresses (42.99)
+T-shirts (15.99)
+Pants (38.99)
+Shorts (29.99)
+Necklaces (11.99)
+Bracelets (6.50)
+Earrings (5.50)
+Sandals (25.50)
+Purses (19.99)
+Makeup (10.00)
+Candles (12.00)
+Headbands (4.99)
+Perfume (29.95)
+Mugs (4.50)
+Stationaries Sets (5.50)
+**/
+
+CREATE TABLE For_Sale (id INTEGER PRIMARY KEY, name TEXT, aisle INTEGER, cost INTEGER, in_stock INTEGER);
+
+INSERT INTO For_Sale VALUES (1, "Dresses", 5, 42.99, 18);
+INSERT INTO For_Sale VALUES (2, "T-Shirts", 4, 15.99, 25);
+INSERT INTO For_Sale VALUES (3, "Pants", 6, 38.99, 13);
+INSERT INTO For_Sale VALUES (4, "Shorts", 6, 29.99, 22);
+INSERT INTO For_Sale VALUES (5, "Necklaces", 8, 11.99, 30);
+INSERT INTO For_Sale VALUES (6, "Bracelets", 8, 6.50, 17);
+INSERT INTO For_Sale VALUES (7, "Earrings", 8, 5.50, 16);
+INSERT INTO For_Sale VALUES (8, "Sandals", 10, 29.50, 14); 
+INSERT INTO For_Sale VALUES (9, "Purses", 11, 19.99, 9);
+INSERT INTO For_Sale VALUES (10, "Makeup", 8, 10.00, 19); 
+INSERT INTO For_Sale VALUES (11, "Candles", 12, 12.00, 28);
+INSERT INTO For_Sale VALUES (12, "Headbands", 8, 4.99, 20);
+INSERT INTO For_Sale VALUES (13, "Perfume", 9, 29.95, 6); 
+INSERT INTO For_Sale VALUES (14, "Mugs", 2, 4.50, 25);
+INSERT INTO For_Sale VALUES (15, "Stationary Sets", 2, 5.50, 30);
+
+---display database order by cost
+SELECT * FROM For_Sale 
+ORDER BY cost asc;
+
+---display database where cost is <20.00 and ordered by cost
+SELECT * FROM For_Sale WHERE cost <20.00 ORDER by cost asc;
+
+---display database of sum of cost and in stock
+SELECT SUM(cost) FROM For_sale;
+SELECT SUM(in_stock) FROM For_sale;
